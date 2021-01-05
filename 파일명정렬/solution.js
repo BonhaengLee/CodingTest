@@ -24,7 +24,8 @@ function solution(files) {
         // regex에 매치되는 첫 Index 찾기
         var numIndexA = a.indexOf(a.match(regexNum)[0]);
         var numIndexB = b.indexOf(b.match(regexNum)[0]);
-        // Head 기준 정렬
+
+        // *** Head 기준 정렬
         var sortByHead = a
             .substring(0, numIndexA)
             .toLowerCase()
@@ -34,9 +35,9 @@ function solution(files) {
         //1, -1, 0
         // NOTE: head로 b를 그대로 둘지(1) b를 a와 바꿀지(-1) sortByHead로 판단한다. 같으면(=) num기준
         if (sortByHead === 0) {
-            // Num기준 정렬
+            // *** Num기준 정렬
             var subStrA = parseInt(a.substring(numIndexA));
-            console.log(subStrA);
+            // console.log(subStrA);
             var subStrB = parseInt(b.substring(numIndexB));
             if (subStrA < subStrB) {
                 return -1;
@@ -56,10 +57,10 @@ function solution(files) {
         var result = compare(a.file, b.file);
         // console.log("res", result);
         // console.log();
-        /***: HEAD가 같으면 index로 정렬해줘야 하는데
-        /*** 문자 정렬과 동일한 방법으로 정렬하게 되면
-        /*** 아스키코드 순으로 정렬되어 숫자의 크기대로 정렬되지 않음
-        /*** 오름차순 정렬을 위해 a.index - b.index */
+        /*  🍕 HEAD가 같으면 index로 정렬해줘야 하는데
+            🍕 문자 정렬과 동일한 방법으로 정렬하게 되면
+            🍕 아스키코드 순으로 정렬되어 숫자의 크기대로 정렬되지 않음
+            🍕 오름차순 정렬을 위해 a.index - b.index   */
         return result === 0 ? a.index - b.index : result;
     });
     return answerWrap.map((answer) => answer.file);
