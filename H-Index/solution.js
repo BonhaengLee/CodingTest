@@ -12,6 +12,7 @@ function solution(citations) {
         return f - s;
     });
     // [0, 1, 3, 5, 6]
+
     // NOTE: n편 중 h번 이상 인용된 논문이 h편 이상 일때 h의 최댓값이 h-index
     var h;
     for (var i = 0; i < citations.length; i++) {
