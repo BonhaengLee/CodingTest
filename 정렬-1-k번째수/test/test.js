@@ -1,16 +1,16 @@
-function solution(array, commands) {
-    var answer = [];
+// numbers의 요소를 for(반복)하면서 concat
+
+function solution(numbers) {
+    var answer = '';
     return answer;
 }
 
 test("solution", () => {
     expect(
-        solution([1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]])
-    ).toBe([5, 6, 3]);
-    // expect(
-    //     solution(["marina", "josipa", "nikola", "vinko", "filipa"], ["josipa", "filipa", "marina", "nikola"])
-    // ).toBe("vinko");
-    // expect(
-    //     solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"])
-    // ).toBe("mislav");
+        solution([6, 10, 2])
+    ).toBe("6210")
+    expect(
+        solution([3, 30, 34, 5, 9])
+    ).toBe("9534330")
+    // 배열 : toStrictEqual([5, 6, 3]);
 });
