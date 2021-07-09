@@ -19,14 +19,31 @@ function solution(n, lost, reserve) {
         if (lost.indexOf(i) !== -1) uniforms[i - 1] -= 1;
         if (reserve.indexOf(i) !== -1) uniforms[i - 1] += 1;
     }
-    for (let [index, curr] of uniforms.entries()) {
-        if (curr === 0 && uniforms[index + 1] > 1) {
-            uniforms[index]++;
-            uniforms[index + 1]--;
+    // for (let [index, curr] of uniforms.entries()) {
+    //     if (curr === 0 && uniforms[index + 1] > 1) {
+    //         uniforms[index]++;
+    //         uniforms[index + 1]--;
+    //     }
+    //     if (curr === 0 && uniforms[index - 1] > 1) {
+    //         uniforms[index]++;
+    //         uniforms[index - 1]--;
+    //     }
+    // }
+    console.log(uniforms);
+
+    for (let key in uniforms) {
+        // console.log(key, uniforms[key]);
+        // console.log(key, uniforms[key]);
+
+        if (uniforms[key] === 0 && uniforms[key + 1] > 1) {
+            uniforms[key]++;
+            uniforms[key + 1]--;
+            // console.log(uniforms);
         }
-        if (curr === 0 && uniforms[index - 1] > 1) {
-            uniforms[index]++;
-            uniforms[index - 1]--;
+        if (uniforms[key] === 0 && uniforms[key - 1] > 1) {
+            uniforms[key]++;
+            uniforms[key - 1]--;
+            // console.log(uniforms);
         }
     }
 
